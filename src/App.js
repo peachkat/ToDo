@@ -1,34 +1,13 @@
-// import React from 'react';
-// import './App.css';
+import React, { memo } from "react";
+import ReactDOM from "react-dom";
+import { useInputValue, useTodos } from "./custom-hooks";
+import Layout from "./components/Layout";
+import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//       </header>
-//     </div>
-//   );
-// }
+//goal if finished with app issues:
+//speech recognition for adding to do items? Look at: https://www.npmjs.com/package/react-speech-recognition
 
-// export default App;
-
-//ABOVE was the app before adding the custom hooks. 
-//Stuff below is actually supposed to be in index.js, but I don't know
-//how to change app.js so this works
-//Following tutorial from : 
-//https://blog.blackbox-vision.tech/making-a-beautiful-todo-app-using-react-hooks-material-ui/?source=post_page-----52dacf3245f4----------------------
-
-
-import React, { memo } from 'react';
-import './App.css'; //Added line from above
-import './styles.css';
-import ReactDOM from 'react-dom';
-import { useInputValue, useTodos } from './custom-hooks';
-
-import Layout from './components/Layout';
-
-import AddTodo from './components/AddTodo';
-import TodoList from './components/TodoList';
 
 const TodoApp = memo(props => {
   const { inputValue, changeInput, clearInput, keyInput } = useInputValue();
@@ -56,4 +35,7 @@ const TodoApp = memo(props => {
   );
 });
 
-ReactDOM.render(<TodoApp />, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+ReactDOM.render(<TodoApp />, rootElement);
+
+export default App;
