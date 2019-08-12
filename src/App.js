@@ -1,15 +1,16 @@
 import React, { memo } from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import { useInputValue, useTodos } from "./custom-hooks";
-import Layout from "./components/Layout";
-import AddTodo from "./components/AddTodo";
-import TodoList from "./components/TodoList";
-
+import Layout from "./Layout";
+import AddTodo from "./AddTodo";
+import TodoList from "./TodoList";
+//another goal: 
+//making sure to do list resets every 24 hours
 //goal if finished with app issues:
 //speech recognition for adding to do items? Look at: https://www.npmjs.com/package/react-speech-recognition
 
 
-const TodoApp = memo(props => {
+const App = memo(props => {
   const { inputValue, changeInput, clearInput, keyInput } = useInputValue();
   const { todos, addTodo, checkTodo, removeTodo } = useTodos();
 
@@ -35,7 +36,7 @@ const TodoApp = memo(props => {
   );
 });
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<TodoApp />, rootElement);
+//const rootElement = document.getElementById("root");
+//ReactDOM.render(<TodoApp />, rootElement);
 
 export default App;
