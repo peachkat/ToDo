@@ -4,6 +4,7 @@ import { useInputValue, useTodos } from "./custom-hooks";
 import Layout from "./Layout";
 import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
+import Calendar from 'react-calendar';
 //another goal: 
 //making sure to do list resets every 24 hours
 //goal if finished with app issues:
@@ -21,6 +22,10 @@ const App = memo(props => {
 
   return (
     <Layout>
+      <Calendar
+        locale="ko-KO"
+        className="calendar"
+      />
       <AddTodo
         inputValue={inputValue}
         onInputChange={changeInput}
